@@ -1,0 +1,12 @@
+<div class="card animated fadeIn fast">
+    <img class="card-img-top" [src]="serie.img" [alt]="serie.titulo">
+    <div class="card-body">
+        <h5 class="card-title"> {{serie.titulo}}</h5>
+        <p class="card-text"><small class="text-muted"> {{serie.estreno  | date:'y' }}</small></p>
+
+        <button (click)="verSerie()" type="button" class="btn btn-outline-primary btn-block">
+                Ver más..
+            </button>
+        <!-- <a [routerLink]="['/heroe', i]" class="btn btn-outline-primary btn-block"> Ver más.. </a>-->
+    </div>
+</div>

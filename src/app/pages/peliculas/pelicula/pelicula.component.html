@@ -1,0 +1,22 @@
+<h1 class="animated fadeIn"> {{ pelicula.titulo | uppercase }} <small> ({{pelicula.estreno | date:'y' }}) </small></h1>
+<hr>
+
+<div class="row animated fadeIn fast">
+    <div class="col-md-4">
+        <img [src]="pelicula.img" class="img-fluid" [alt]="pelicula.titulo">
+        <br><br>
+        <a [routerLink]="['/peliculas']" class="btn btn-outline-danger btn-block"> Regresar</a>
+    </div>
+
+    <div class="col-md-8">
+        <h3> {{pelicula.titulo}}</h3>
+        <hr>
+        <p>
+            {{pelicula.sinopsis}}
+        </p>
+        <div>
+            <img *ngIf="pelicula.productora== 'Marvel'" class="img-logo" src="assets/img/productoras/logo-marvel.png" alt="Marvel">
+            <img *ngIf="pelicula.productora== 'DC'" class="img-logo" src="assets/img/productoras/dc-logo.jpg" alt="DC">
+        </div>
+    </div>
+</div>

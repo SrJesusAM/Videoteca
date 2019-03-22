@@ -1,0 +1,22 @@
+<h1 class="animated fadeIn"> {{ serie.titulo | uppercase }} <small> ({{serie.estreno}}) </small></h1>
+<hr>
+
+<div class="row animated fadeIn fast">
+    <div class="col-md-4">
+        <img [src]="serie.img" class="img-fluid" [alt]="serie.titulo">
+        <br><br>
+        <a [routerLink]="['/series']" class="btn btn-outline-danger btn-block"> Regresar</a>
+    </div>
+
+    <div class="col-md-8">
+        <h3> {{serie.titulo}}</h3>
+        <hr>
+        <p>
+            {{serie.sinopsis}}
+        </p>
+        <div>
+            <img *ngIf="serie.productora== 'Marvel'" class="img-logo" src="assets/img/productoras/logo-marvel.png" alt="Marvel">
+            <img *ngIf="serie.productora== 'DC'" class="img-logo" src="assets/img/productoras/dc-logo.jpg" alt="DC">
+        </div>
+    </div>
+</div>

@@ -1,0 +1,12 @@
+<div class="card animated fadeIn fast">
+    <img class="card-img-top" [src]="pelicula.img" [alt]="pelicula.titulo">
+    <div class="card-body">
+        <h5 class="card-title"> {{pelicula.titulo}}</h5>
+        <p class="card-text"><small class="text-muted"> {{pelicula.estreno}}</small></p>
+
+        <button (click)="verPelicula()" type="button" class="btn btn-outline-primary btn-block">
+            Ver más..
+        </button>
+        <!-- <a [routerLink]="['/heroe', i]" class="btn btn-outline-primary btn-block"> Ver más.. </a>-->
+    </div>
+</div>
