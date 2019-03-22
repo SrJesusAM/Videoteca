@@ -2,7 +2,7 @@
 <hr>
 
 <div class="row animated fadeIn fast">
-    <div class="col-md-4">
+    <div class="col-md-3">
         <img [src]="pelicula.img" class="img-fluid" [alt]="pelicula.titulo">
         <br><br>
         <a [routerLink]="['/peliculas']" class="btn btn-outline-danger btn-block"> Regresar</a>
@@ -17,6 +17,15 @@
         <div>
             <img *ngIf="pelicula.productora== 'Marvel'" class="img-logo" src="assets/img/productoras/logo-marvel.png" alt="Marvel">
             <img *ngIf="pelicula.productora== 'DC'" class="img-logo" src="assets/img/productoras/dc-logo.jpg" alt="DC">
+            <img *ngIf="pelicula.productora== 'Atresmedia'" class="img-logo" src="assets/img/productoras/atresmedia.png" alt="Marvel">
+        </div>
+        <hr>
+        <div>
+            <h5> Actores</h5>
+            <div class="card-deck">
+                <app-actores-tarjeta (actorSeleccionado)="verActor($event)" [actor]="foo" [index]=i *ngFor="let foo of pelicula.actores; let i = index" style="width: 12rem"></app-actores-tarjeta>
+            </div>
+
         </div>
     </div>
 </div>

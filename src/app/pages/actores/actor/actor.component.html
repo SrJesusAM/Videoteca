@@ -1,0 +1,47 @@
+<!-- <h1 class="animated fadeIn"> Jason Momoa </h1>
+<hr> -->
+
+<div class="row animated fadeIn fast">
+    <div class="col-md-3">
+        <img [src]="actor.img" class="img-fluid" [alt]="actor.nombre">
+        <br><br>
+        <h5>Información personal</h5>
+        <table class="table table-borderless table-striped">
+            <tbody>
+                <tr>
+                    <th scope="row">Nombre de nacimiento: </th>
+                    <td> {{actor.nombreCompleto}}</td>
+                </tr>
+                <tr>
+                    <th scope="row">Nacimiento</th>
+                    <td>{{actor.nacimiento}}</td>
+                </tr>
+                <tr>
+                    <th scope="row">Nacionalidad</th>
+                    <td>{{actor.nacionalidad}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <hr>
+
+        <a [routerLink]="['/actores']" class="btn btn-outline-danger btn-block"> Regresar</a>
+    </div>
+
+    <div class="col-md-8">
+        <h3> {{actor.nombre}} </h3>
+        <hr>
+        <h5>Biografía</h5>
+        <p>
+            {{actor.biografia}}
+        </p>
+        <hr>
+        <br>
+        <div>
+            <h5> Filmografía</h5>
+            <div class="card-deck">
+                <app-peliculas-tarjeta (peliculaSeleccionada)="verPelicula($event)" [pelicula]="foo" [index]=i *ngFor="let foo of actor.peliculas; let i = index" style="width: 15rem"></app-peliculas-tarjeta>
+                <!--<app-series-tarjeta (serieSeleccionada)="verSerie($event)" [serie]="foo" [index]=i *ngFor="let foo of series; let i = index" style="width: 15rem"></app-series-tarjeta>-->
+
+            </div>
+        </div>
+    </div>

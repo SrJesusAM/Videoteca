@@ -27,6 +27,10 @@ import { SerieComponent } from './pages/series/serie/serie.component';
 import { BuscadorComponent } from './components/buscador/buscador.component';
 import { FooterComponent } from './shared/footer/footer.component';
 
+import { ActorComponent } from './pages/actores/actor/actor.component';
+import { ActoresComponent } from './pages/actores/actores.component';
+import { ActoresTarjetaComponent } from './pages/actores/actores-tarjeta/actores-tarjeta.component';
+
 
 
 
@@ -45,7 +49,10 @@ import { FooterComponent } from './shared/footer/footer.component';
     SerieComponent,
     PeliculaComponent,
     BuscadorComponent,
-    FooterComponent
+    FooterComponent,
+    ActorComponent,
+    ActoresComponent,
+    ActoresTarjetaComponent
   ],
   imports: [
     BrowserModule,

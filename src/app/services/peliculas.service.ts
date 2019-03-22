@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Actor } from './actores.service';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,19 @@ export class PeliculasService {
         "Cuando Arthur Curry (Jason Momoa) descubre que es mitad humano y mitad atlante, emprenderá el viaje de su vida en esta aventura que no sólo le obligará a enfrentarse a quién es en realidad, sino también a descubrir si es digno de cumplir con su destino: ser rey, y convertirse en Aquaman.",
       img: "assets/img/peliculas/aquaman.jpg",
       estreno: "2018-12-21",
-      productora: "DC"
+      productora: "DC",
+      actores: [
+        {
+          nombre: "Jason Momoa",
+          biografia:
+            "Cuando Arthur Curry (Jason Momoa) descubre que es mitad humano y mitad atlante, emprenderá el viaje de su vida en esta aventura que no sólo le obligará a enfrentarse a quién es en realidad, sino también a descubrir si es digno de cumplir con su destino: ser rey, y convertirse en Aquaman.",
+          img: "assets/img/actores/jason-momoa.jpg",
+          nombreCompleto: "Joseph Jason Namakaeha Momoa",
+          nacimiento: "01/08/1979",
+          nacionalidad: "Estadounidense"
+        }
+
+      ]
     },
     {
       titulo: "Wonder Woman",
@@ -27,7 +40,19 @@ export class PeliculasService {
         "El todopoderoso Thanos ha despertado con la promesa de arrasar con todo a su paso, portando el Guantelete del Infinito, que le confiere un poder incalculable. Los únicos capaces de pararle los pies son los Vengadores y el resto de superhéroes de la galaxia, que deberán estar dispuestos a sacrificarlo todo por un bien mayor. Capitán América e Ironman deberán limar sus diferencias, Black Panther apoyará con sus tropas desde Wakanda, Thor y los Guardianes de la Galaxia e incluso Spider-Man se unirán antes de que los planes de devastación y ruina pongan fin al universo. ¿Serán capaces de frenar el avance del titán del caos?",
       img: "assets/img/peliculas/avengers-3.jpg",
       estreno: "2018-05-15",
-      productora: "Marvel"
+      productora: "Marvel",
+      actores: [
+        {
+          nombre: "Chris Evans",
+          biografia:
+            "Christopher Robert 'Chris' Evans (nacido el 13 de junio de 1981) es un actor y cineasta estadounidense. Evans es más conocido por sus papeles de superhéroe, como Capitán América en el Marvel Cinematic Universe, y como Human Torch en Fantastic Four. En 2015, debutó como director con el drama romántico Before We Go.",
+          img: "assets/img/actores/chris-evans.jpg",
+          nombreCompleto: "Christopher Robert Evans",
+          nacimiento: "13/06/1981",
+          nacionalidad: "Estadounidense"
+        }
+
+      ]
     },
     {
       titulo: "Capitan America",
@@ -35,7 +60,19 @@ export class PeliculasService {
         "Nacido durante la Gran Depresión (años 30), Steve Rogers creció como un chico enclenque en una familia pobre. Horrorizado por las noticias que llegaban de Europa sobre los nazis, decidió enrolarse en el ejército; sin embargo, debido a su precaria salud, fue rechazado una y otra vez. Enternecido por sus súplicas, el General Chester Phillips le ofreció la oportunidad de participar en un experimento especial: la Operación Renacimiento. Tras administrarle el “Suero Super-Soldado” y bombardearlo con “vitarrayos”, el cuerpo de Steve se hace perfecto. A continuación, se sometió a un intensivo programa de entrenamiento físico y táctico. Tres meses después, le encomendaron su primera misión como Capitán América. Armado con un escudo indestructible, emprenderá la guerra contra el Mal como centinela de la libertad y líder de los Vengadores",
       img: "assets/img/peliculas/capitan-america-1.jpg",
       estreno: "2011-05-15",
-      productora: "Marvel"
+      productora: "Marvel",
+      actores: [
+        {
+          nombre: "Chris Evans",
+          biografia:
+            "Christopher Robert 'Chris' Evans (nacido el 13 de junio de 1981) es un actor y cineasta estadounidense. Evans es más conocido por sus papeles de superhéroe, como Capitán América en el Marvel Cinematic Universe, y como Human Torch en Fantastic Four. En 2015, debutó como director con el drama romántico Before We Go.",
+          img: "assets/img/actores/chris-evans.jpg",
+          nombreCompleto: "Christopher Robert Evans",
+          nacimiento: "13/06/1981",
+          nacionalidad: "Estadounidense"
+        }
+
+      ]
     },
     {
       titulo: "Taxi a Gibraltar",
@@ -91,6 +128,7 @@ export interface Pelicula {
   img: string;
   estreno: string;
   productora: string;
+  actores?: Actor[];
   idx?:number;
 
 }

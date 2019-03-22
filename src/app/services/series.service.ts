@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Actor } from './actores.service';
 
 @Injectable({
   providedIn: 'root'

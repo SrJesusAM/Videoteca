@@ -2,7 +2,7 @@
 <hr>
 
 <div class="row animated fadeIn fast">
-    <div class="col-md-4">
+    <div class="col-md-3">
         <img [src]="serie.img" class="img-fluid" [alt]="serie.titulo">
         <br><br>
         <a [routerLink]="['/series']" class="btn btn-outline-danger btn-block"> Regresar</a>
@@ -17,6 +17,99 @@
         <div>
             <img *ngIf="serie.productora== 'Marvel'" class="img-logo" src="assets/img/productoras/logo-marvel.png" alt="Marvel">
             <img *ngIf="serie.productora== 'DC'" class="img-logo" src="assets/img/productoras/dc-logo.jpg" alt="DC">
+        </div>
+        <hr>
+        <div>
+            <h5> Actores</h5>
+            <div class="card-deck">
+                <app-actores-tarjeta (actorSeleccionado)="verActor($event)" [actor]="foo" [index]=i *ngFor="let foo of actores; let i = index" style="width: 12rem"></app-actores-tarjeta>
+            </div>
+
+        </div>
+        <hr>
+        <div>
+            <h5> Contenido</h5>
+            <div class="accordion" id="accordionExample">
+                <div class="card">
+                    <div class="card-header" id="headingOne">
+                        <h2 class="mb-0">
+                            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            Temporada 1
+                          </button>
+                        </h2>
+                    </div>
+
+                    <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                        <div class="card-body">
+                            Episodio 1
+                        </div>
+                        <div class="card-body">
+                            Episodio 2
+                        </div>
+
+                        <div class="card-body">
+                            Episodio 3
+                        </div>
+                        <div class="card-body">
+                            Episodio 4
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header" id="headingTwo">
+                        <h2 class="mb-0">
+                            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                            Temporada 2
+                          </button>
+                        </h2>
+                    </div>
+
+                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                        <div class="card-body">
+                            Episodio 1
+                        </div>
+                        <div class="card-body">
+                            Episodio 2
+                        </div>
+
+                        <div class="card-body">
+                            Episodio 3
+                        </div>
+                        <div class="card-body">
+                            Episodio 4
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header" id="headingThree">
+                        <h2 class="mb-0">
+                            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+                            Temporada 3
+                          </button>
+                        </h2>
+                    </div>
+
+                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                        <div class="card-body">
+                            Episodio 1
+                        </div>
+                        <div class="card-body">
+                            Episodio 2
+                        </div>
+
+                        <div class="card-body">
+                            Episodio 3
+                        </div>
+                        <div class="card-body">
+                            Episodio 4
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
         </div>
     </div>
 </div>
