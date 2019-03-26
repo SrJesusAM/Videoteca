@@ -22,7 +22,7 @@ export class ActoresTarjetaComponent implements OnInit {
 
   verActor() {
     // console.log(this.index);
-    this.router.navigate( ['actores',this.index] )
+    this.router.navigate( ['actores',this.actor.idx] )
     //this.heroeSeleccionado.emit(this.index);
   }
 

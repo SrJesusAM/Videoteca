@@ -22,7 +22,7 @@ export class SeriesTarjetaComponent implements OnInit {
   }
 
   verSerie(){
-    this.router.navigate( ['series',this.index] )
+    this.router.navigate( ['series',this.serie.idx] )
   }
 
 }

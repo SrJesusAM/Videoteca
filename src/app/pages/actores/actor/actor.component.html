@@ -39,7 +39,8 @@
         <div>
             <h5> Filmografía</h5>
             <div class="card-deck">
-                <app-peliculas-tarjeta (peliculaSeleccionada)="verPelicula($event)" [pelicula]="foo" [index]=i *ngFor="let foo of actor.peliculas; let i = index" style="width: 15rem"></app-peliculas-tarjeta>
+                <app-peliculas-tarjeta [pelicula]="foo" [index]=i *ngFor="let foo of actor.peliculas; let i = index" style="width: 15rem"></app-peliculas-tarjeta>
+                <app-series-tarjeta [serie]="foo" [index]=i *ngFor="let foo of actor.series; let i = index" style="width: 15rem"></app-series-tarjeta>
                 <!--<app-series-tarjeta (serieSeleccionada)="verSerie($event)" [serie]="foo" [index]=i *ngFor="let foo of series; let i = index" style="width: 15rem"></app-series-tarjeta>-->
 
             </div>

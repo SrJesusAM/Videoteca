@@ -23,7 +23,7 @@
         <div>
             <h5> Actores</h5>
             <div class="card-deck">
-                <app-actores-tarjeta (actorSeleccionado)="verActor($event)" [actor]="foo" [index]=i *ngFor="let foo of pelicula.actores; let i = index" style="width: 12rem"></app-actores-tarjeta>
+                <app-actores-tarjeta [actor]="foo" [index]=i *ngFor="let foo of pelicula.actores; let i = index" style="width: 12rem"></app-actores-tarjeta>
             </div>
 
         </div>

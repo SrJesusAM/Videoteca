@@ -1,4 +1,4 @@
-<h1 class="animated fadeIn"> {{ serie.titulo | uppercase }} <small> ({{serie.estreno}}) </small></h1>
+<h1 class="animated fadeIn"> {{ serie.titulo | uppercase }} <small> ({{serie.estreno | date:'y'}}) </small></h1>
 <hr>
 
 <div class="row animated fadeIn fast">
@@ -22,93 +22,39 @@
         <div>
             <h5> Actores</h5>
             <div class="card-deck">
-                <app-actores-tarjeta (actorSeleccionado)="verActor($event)" [actor]="foo" [index]=i *ngFor="let foo of actores; let i = index" style="width: 12rem"></app-actores-tarjeta>
+                <app-actores-tarjeta [actor]="foo" [index]=i *ngFor="let foo of serie.actores; let i = index" style="width: 12rem"></app-actores-tarjeta>
             </div>
 
         </div>
         <hr>
         <div>
             <h5> Contenido</h5>
-            <div class="accordion" id="accordionExample">
-                <div class="card">
-                    <div class="card-header" id="headingOne">
-                        <h2 class="mb-0">
-                            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                            Temporada 1
-                          </button>
-                        </h2>
+            <!--Accordion wrapper-->
+            <div class="accordion md-accordion" id="accordionEx1" role="tablist" aria-multiselectable="true">
+
+                <!-- Accordion card -->
+                <div class="card" *ngFor="let i of serie.contenido; let in = index">
+
+                    <!-- Card header -->
+                    <div class="card-header" role="tab" id="heading{{i.temporada}}">
+                        <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx1" href="#collapse{{i.temporada}}" [attr.aria-expanded]="!isCollapsed">
+                            <h5 class="mb-0">
+                                Temporada {{i.temporada}} <i class="fas fa-angle-down rotate-icon"></i>
+                            </h5>
+                        </a>
                     </div>
 
-                    <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
-                        <div class="card-body">
-                            Episodio 1
-                        </div>
-                        <div class="card-body">
-                            Episodio 2
-                        </div>
-
-                        <div class="card-body">
-                            Episodio 3
-                        </div>
-                        <div class="card-body">
-                            Episodio 4
+                    <!-- Card body -->
+                    <div id="collapse{{i.temporada}}" class="collapse" role="tabpanel">
+                        <div class="card-body " *ngFor="let j of serie.contenido[in].episodios; let ind = index ">
+                            {{j}}
                         </div>
                     </div>
+
                 </div>
-
-                <div class="card">
-                    <div class="card-header" id="headingTwo">
-                        <h2 class="mb-0">
-                            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-                            Temporada 2
-                          </button>
-                        </h2>
-                    </div>
-
-                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
-                        <div class="card-body">
-                            Episodio 1
-                        </div>
-                        <div class="card-body">
-                            Episodio 2
-                        </div>
-
-                        <div class="card-body">
-                            Episodio 3
-                        </div>
-                        <div class="card-body">
-                            Episodio 4
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="card-header" id="headingThree">
-                        <h2 class="mb-0">
-                            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
-                            Temporada 3
-                          </button>
-                        </h2>
-                    </div>
-
-                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
-                        <div class="card-body">
-                            Episodio 1
-                        </div>
-                        <div class="card-body">
-                            Episodio 2
-                        </div>
-
-                        <div class="card-body">
-                            Episodio 3
-                        </div>
-                        <div class="card-body">
-                            Episodio 4
-                        </div>
-                    </div>
-                </div>
-
+                <!-- Accordion card -->
             </div>
+            <!-- Accordion wrapper -->
 
         </div>
     </div>
