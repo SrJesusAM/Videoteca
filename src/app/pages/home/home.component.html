@@ -4,3 +4,24 @@
         <p class="lead">Esta es una aplicación de videos.</p>
     </div>
 </div>
+
+<hr>
+
+<h3>Peliculas recomendadas <small><a [routerLink]="['/peliculas']">ver más..</a></small></h3>
+<div class="card-columns masonry">
+    <div>
+        <app-peliculas-tarjeta (peliculaSeleccionada)="verPelicula($event)" [pelicula]="foo" [index]=i *ngFor="let foo of peliculas| slice:0:3; let i = index"></app-peliculas-tarjeta>
+    </div>
+</div>
+
+<hr>
+
+<h3>Series recomendadas <small><a [routerLink]="['/series']">ver más..</a></small></h3>
+<div class="card-columns masonry">
+
+    <!-- *ngFor="let heroe of heroes; let i = index" -->
+    <app-series-tarjeta (serieSeleccionada)="verSerie($event)" [serie]="foo" [index]=i *ngFor="let foo of series | slice:0:3; let i = index"></app-series-tarjeta>
+
+</div>
+
+<hr>

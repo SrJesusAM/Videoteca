@@ -30,6 +30,8 @@ import { FooterComponent } from './shared/footer/footer.component';
 import { ActorComponent } from './pages/actores/actor/actor.component';
 import { ActoresComponent } from './pages/actores/actores.component';
 import { ActoresTarjetaComponent } from './pages/actores/actores-tarjeta/actores-tarjeta.component';
+import { AddPeliculaComponent } from './components/formularios/add-pelicula/add-pelicula.component';
+import { AddSerieComponent } from './components/formularios/add-serie/add-serie.component';
 
 
 
@@ -52,7 +54,9 @@ import { ActoresTarjetaComponent } from './pages/actores/actores-tarjeta/actores
     FooterComponent,
     ActorComponent,
     ActoresComponent,
-    ActoresTarjetaComponent
+    ActoresTarjetaComponent,
+    AddPeliculaComponent,
+    AddSerieComponent
   ],
   imports: [
     BrowserModule,
