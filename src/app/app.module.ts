@@ -32,6 +32,7 @@ import { ActoresComponent } from './pages/actores/actores.component';
 import { ActoresTarjetaComponent } from './pages/actores/actores-tarjeta/actores-tarjeta.component';
 import { AddPeliculaComponent } from './components/formularios/add-pelicula/add-pelicula.component';
 import { AddSerieComponent } from './components/formularios/add-serie/add-serie.component';
+import { AddPageComponent } from './components/formularios/add-page.component';
 
 
 
@@ -56,7 +57,8 @@ import { AddSerieComponent } from './components/formularios/add-serie/add-serie.
     ActoresComponent,
     ActoresTarjetaComponent,
     AddPeliculaComponent,
-    AddSerieComponent
+    AddSerieComponent,
+    AddPageComponent
   ],
   imports: [
     BrowserModule,

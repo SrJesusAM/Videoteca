@@ -1,3 +1,72 @@
-<p>
-  add-serie works!
-</p>
+<h4>Añadir <small>Serie</small></h4>
+<hr>
+<form>
+
+    <div>
+
+        <div class="form-group row">
+            <label class="col-2 col-form-label">Titulo</label>
+            <div class="col-8">
+
+                <input class="form-control" type="text" placeholder="Titulo">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="col-2 col-form-label">Sinopsis</label>
+            <div class="col-8">
+
+                <input class="form-control" type="text" placeholder="Sinopsis">
+            </div>
+        </div>
+
+    </div>
+
+    <div class="form-group row">
+        <label class="col-2 col-form-label">Imagen</label>
+        <div class="col-md-8">
+
+            <input type="file" id="archivo1">
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label class="col-2 col-form-label">Fecha estreno</label>
+        <div class="col-md-8">
+
+            <input id="date" type="date">
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label class="col-2 col-form-label">Productora</label>
+        <div class="col-8">
+
+            <input class="form-control" type="text" placeholder="Sinopsis">
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label class="col-2 col-form-label">Contenido</label>
+        <div class="col-md-2" formArrayName="temporadas">
+            <input type="text" class="form-control" placeholder="Temporada">
+        </div>
+        <button type="button" class="btn btn-primary"><i class="fa fa-plus"></i></button>
+        <div class="col-md-5" formArrayName="episodios">
+            <input type="text" class="form-control" placeholder="Episodio">
+        </div>
+        <button type="button" class="btn btn-primary"><i class="fa fa-plus"></i></button>
+    </div>
+
+    <div class="form-group row">
+        <label class="col-2 col-form-label">&nbsp;</label>
+        <div class="input-group col-md-8">
+            <button type="submit" class="btn btn-outline-primary">
+          Guardar
+        </button>
+        </div>
+    </div>
+
+
+
+</form>

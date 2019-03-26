@@ -1,5 +1,9 @@
 import { Routes, RouterModule } from '@angular/router';
 
+// Rutas
+import { ADD_ROUTES } from './components/formularios/add-page.routes';
+
+// Componentes
 import { NopagefoundComponent } from './pages/nopagefound/nopagefound.component';
 import { PeliculasComponent } from './pages/peliculas/peliculas.component';
 import { SeriesComponent } from './pages/series/series.component';
@@ -9,6 +13,8 @@ import { SerieComponent } from './pages/series/serie/serie.component';
 import { BuscadorComponent } from './components/buscador/buscador.component';
 import { ActorComponent } from './pages/actores/actor/actor.component';
 import { ActoresComponent } from './pages/actores/actores.component';
+import { AddPageComponent } from './components/formularios/add-page.component';
+
 
 
 const appRoutes: Routes = [
@@ -21,6 +27,11 @@ const appRoutes: Routes = [
     { path: 'actores', component: ActoresComponent },
     { path: 'actores/:id', component: ActorComponent },
     { path: 'buscar/:termino', component: BuscadorComponent },
+    {
+         path: 'add', 
+         component: AddPageComponent,
+         children: ADD_ROUTES    
+    },
     { path: '404', component: NopagefoundComponent },
     { path: '**', pathMatch:'full', redirectTo: '404' }
 ];
