@@ -1,6 +1,6 @@
 <h4>Añadir <small>Pelicula</small></h4>
 <hr>
-<form>
+<form (ngSubmit)="guardar(forma)" #forma="ngForm" novalidate="">
 
     <div>
 
@@ -8,15 +8,29 @@
             <label class="col-2 col-form-label">Titulo</label>
             <div class="col-8">
 
-                <input class="form-control" type="text" placeholder="Titulo">
+                <input class="form-control" type="text" placeholder="Titulo" name="titulo" [(ngModel)]="pelicula.titulo" minlength="5" required #titulo="ngModel">
+                <div *ngIf="titulo?.errors?.required" class="form-control-feedback">
+                    Este campo es requerido
+                </div>
+                <div *ngIf="titulo?.errors?.minlength" class="form-control-feedback">
+                    Por los menos {{titulo?.errors.minlength.requiredLength}} caracteres
+                </div>
             </div>
+
         </div>
+
 
         <div class="form-group row">
             <label class="col-2 col-form-label">Sinopsis</label>
             <div class="col-8">
 
-                <input class="form-control" type="text" placeholder="Sinopsis">
+                <input class="form-control" type="text" placeholder="Sinopsis" name="sinopsis" [(ngModel)]="pelicula.sinopsis" minlength="20" required #sinopsis="ngModel">
+                <div *ngIf="sinopsis?.errors?.required" class="form-control-feedback">
+                    Este campo es requerido
+                </div>
+                <div *ngIf="sinopsis?.errors?.minlength" class="form-control-feedback">
+                    Por los menos {{titulo?.errors.minlength.requiredLength}} caracteres
+                </div>
             </div>
         </div>
 
@@ -26,7 +40,7 @@
         <label class="col-2 col-form-label">Imagen</label>
         <div class="col-md-8">
 
-            <input type="file" id="archivo1">
+            <input class="form-control" type="text" name="imagen" [(ngModel)]="pelicula.img" #imagen="ngModel">
         </div>
     </div>
 
@@ -34,7 +48,10 @@
         <label class="col-2 col-form-label">Fecha estreno</label>
         <div class="col-md-8">
 
-            <input id="date" type="date">
+            <input id="date" type="date" name="estreno" [(ngModel)]="pelicula.estreno" #estreno="ngModel" required>
+            <div *ngIf="estreno?.errors?.required" class="form-control-feedback">
+                Este campo es requerido
+            </div>
         </div>
     </div>
 
@@ -42,17 +59,49 @@
         <label class="col-2 col-form-label">Productora</label>
         <div class="col-8">
 
-            <input class="form-control" type="text" placeholder="Sinopsis">
+            <input class="form-control" type="text" placeholder="Productora" name="productora" [(ngModel)]="pelicula.productora" minlength="5" #productora="ngModel" required>
+            <div *ngIf="productora?.errors?.required" class="form-control-feedback">
+                Este campo es requerido
+            </div>
+            <div *ngIf="productora?.errors?.minlength" class="form-control-feedback">
+                Por los menos {{titulo?.errors.minlength.requiredLength}} caracteres
+            </div>
+        </div>
+    </div>
+
+    <!--   <div class="form-group row">
+        <label class="col-2 col-form-label">Actores</label>
+        <div class="col-4">
+
+            <select [(ngModel)]="pelicula.actores" class="form-control" name="actores">
+                <option value="">Seleccione actor...</option>
+                <option *ngFor="let actor of actores" [value]="actor | slice:0:4">{{actor.nombre}}</option>
+            </select>
+        </div>
+        <button type="button" class="btn btn-primary"><i class="fa fa-plus"></i></button> &nbsp;
+        <button type="button" class="btn btn-danger"><i class="fa fa-minus"></i></button>
+    </div>
+-->
+
+    <div class="form-group row">
+        <label class="col-2 col-form-label">Identificador</label>
+        <div class="col-4">
+
+            <input class="form-control" type="text" placeholder="{{pelicula.idx}}" name="idx" [(ngModel)]="pelicula.idx" #identificador="ngModel" disabled>
         </div>
     </div>
 
     <div class="form-group row">
         <label class="col-2 col-form-label">&nbsp;</label>
         <div class="input-group col-md-8">
-            <button type="submit" class="btn btn-outline-primary">
+            <button type="submit" class="btn btn-outline-primary" [disabled]="!forma.valid"> <!---->
           Guardar
         </button>
         </div>
     </div>
 
 </form>
+
+<pre>
+    {{ pelicula | json}}
+</pre>

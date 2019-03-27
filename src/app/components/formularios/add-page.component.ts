@@ -10,8 +10,7 @@ export class AddPageComponent implements OnInit {
 
   constructor(private route: ActivatedRoute) { 
     this.route.params.subscribe( parametros =>{
-      console.log("Ruta PADRE");
-      console.log(parametros);
+      
     });
 
   }

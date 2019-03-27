@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { PeliculasService } from 'src/app/services/peliculas.service';
 
@@ -8,7 +8,7 @@ import { PeliculasService } from 'src/app/services/peliculas.service';
   templateUrl: './pelicula.component.html',
   styles: []
 })
-export class PeliculaComponent {
+export class PeliculaComponent implements OnInit{
 
   pelicula:any = {};
 
@@ -23,6 +23,10 @@ export class PeliculaComponent {
   
   
               }
+
+  ngOnInit () {
+    console.log(this.pelicula);
+  }
 
 
 }

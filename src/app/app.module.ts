@@ -33,6 +33,8 @@ import { ActoresTarjetaComponent } from './pages/actores/actores-tarjeta/actores
 import { AddPeliculaComponent } from './components/formularios/add-pelicula/add-pelicula.component';
 import { AddSerieComponent } from './components/formularios/add-serie/add-serie.component';
 import { AddPageComponent } from './components/formularios/add-page.component';
+import { ModificarActorComponent } from './components/formularios/modificar-actor/modificar-actor.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -58,10 +60,13 @@ import { AddPageComponent } from './components/formularios/add-page.component';
     ActoresTarjetaComponent,
     AddPeliculaComponent,
     AddSerieComponent,
-    AddPageComponent
+    AddPageComponent,
+    ModificarActorComponent
   ],
   imports: [
     BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
     APP_ROUTES
   ],
   providers: [

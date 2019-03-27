@@ -14,6 +14,7 @@ import { BuscadorComponent } from './components/buscador/buscador.component';
 import { ActorComponent } from './pages/actores/actor/actor.component';
 import { ActoresComponent } from './pages/actores/actores.component';
 import { AddPageComponent } from './components/formularios/add-page.component';
+import { ModificarActorComponent } from './components/formularios/modificar-actor/modificar-actor.component';
 
 
 
@@ -33,6 +34,7 @@ const appRoutes: Routes = [
          children: ADD_ROUTES    
     },
     { path: '404', component: NopagefoundComponent },
+    { path: 'modificar-actor', component: ModificarActorComponent },
     { path: '**', pathMatch:'full', redirectTo: '404' }
 ];
 

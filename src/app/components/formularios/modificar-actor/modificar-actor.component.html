@@ -1,22 +1,23 @@
-<h4>Añadir <small>Serie</small></h4>
+<h4>Modificar <small>Actor</small></h4>
 <hr>
 <form>
 
     <div>
 
+
         <div class="form-group row">
-            <label class="col-2 col-form-label">Titulo</label>
+            <label class="col-2 col-form-label">Nombre</label>
             <div class="col-8">
 
-                <input class="form-control" type="text" placeholder="Titulo">
+                <input class="form-control" type="text" placeholder="Nombre">
             </div>
         </div>
 
         <div class="form-group row">
-            <label class="col-2 col-form-label">Sinopsis</label>
+            <label class="col-2 col-form-label">Biografía</label>
             <div class="col-8">
 
-                <input class="form-control" type="text" placeholder="Sinopsis">
+                <input class="form-control" type="text" placeholder="Biografía">
             </div>
         </div>
 
@@ -24,8 +25,9 @@
 
     <div class="form-group row">
         <label class="col-2 col-form-label">Imagen</label>
-        <div class="col-md-8">
 
+        <div class="col-md-8">
+            <img src="../../../../assets/img/actores/jason-momoa.jpg" style="height: 11rem"> <br><br>
             <input type="file" id="archivo1">
         </div>
     </div>
@@ -39,22 +41,42 @@
     </div>
 
     <div class="form-group row">
-        <label class="col-2 col-form-label">Productora</label>
+        <label class="col-2 col-form-label">Nombre completo</label>
         <div class="col-8">
 
-            <input class="form-control" type="text" placeholder="Sinopsis">
+            <input class="form-control" type="text" placeholder="Nombre completo">
         </div>
     </div>
 
     <div class="form-group row">
-        <label class="col-2 col-form-label">Contenido</label>
-        <div class="col-md-2">
-            <input type="text" class="form-control" placeholder="Temporada">
+        <label class="col-2 col-form-label">Nacionalidad</label>
+        <div class="col-8">
+
+            <input class="form-control" type="text" placeholder="Nacionalidad">
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label class="col-2 col-form-label">Peliculas</label>
+        <div class="col-4">
+
+            <select id="inputState" class="form-control">
+                <option>Seleccione pelicula...</option>
+                <option>...</option>
+            </select>
         </div>
         <button type="button" class="btn btn-primary"><i class="fa fa-plus"></i></button> &nbsp;
         <button type="button" class="btn btn-danger"><i class="fa fa-minus"></i></button>
-        <div class="col-md-4">
-            <input type="text" class="form-control" placeholder="Episodio">
+    </div>
+
+    <div class="form-group row">
+        <label class="col-2 col-form-label">Series</label>
+        <div class="col-4">
+
+            <select id="inputState" class="form-control">
+                <option>Seleccione serie...</option>
+                <option>...</option>
+            </select>
         </div>
         <button type="button" class="btn btn-primary"><i class="fa fa-plus"></i></button> &nbsp;
         <button type="button" class="btn btn-danger"><i class="fa fa-minus"></i></button>
@@ -76,7 +98,5 @@
         </button>
         </div>
     </div>
-
-
 
 </form>

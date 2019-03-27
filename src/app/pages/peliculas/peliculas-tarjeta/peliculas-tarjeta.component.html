@@ -2,7 +2,7 @@
     <a (click)="verPelicula()" style="cursor: pointer"><img class="card-img-top" [src]="pelicula.img" [alt]="pelicula.titulo"></a>
     <div class="card-body">
         <h5 class="card-title"> {{pelicula.titulo}}</h5>
-        <p class="card-text"><small class="text-muted"> {{pelicula.estreno}}</small></p>
+        <p class="card-text"><small class="text-muted"> {{pelicula.estreno | date: 'y'}}</small></p>
 
         <!-- <a [routerLink]="['/heroe', i]" class="btn btn-outline-primary btn-block"> Ver más.. </a>-->
     </div>

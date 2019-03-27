@@ -23,12 +23,12 @@
             </tbody>
         </table>
         <hr>
-
         <a [routerLink]="['/actores']" class="btn btn-outline-danger btn-block"> Regresar</a>
     </div>
 
     <div class="col-md-8">
         <h3> {{actor.nombre}} </h3>
+
         <hr>
         <h5>Biografía</h5>
         <p>
@@ -45,4 +45,9 @@
 
             </div>
         </div>
+
+    </div>
+    <div class="col-md-1">
+        <a [routerLink]="['/modificar-actor']" class="btn btn-outline-dark btn-block"> Editar</a>
+        <a [routerLink]="['/modificar-actor']" class="btn btn-outline-danger btn-block"> Borrar</a>
     </div>
