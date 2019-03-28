@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { SeriesService } from 'src/app/services/series.service';
 
@@ -7,7 +7,7 @@ import { SeriesService } from 'src/app/services/series.service';
   templateUrl: './serie.component.html',
   styles: []
 })
-export class SerieComponent {
+export class SerieComponent implements OnInit {
 
   serie:any = {};
 
@@ -20,6 +20,9 @@ export class SerieComponent {
      });
     } 
   
+ ngOnInit(){
+   console.log(this.serie);
+ }
 
 }
 

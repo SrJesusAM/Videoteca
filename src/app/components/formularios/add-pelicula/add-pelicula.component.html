@@ -57,14 +57,14 @@
 
     <div class="form-group row">
         <label class="col-2 col-form-label">Productora</label>
-        <div class="col-8">
+        <div class="col-4">
 
-            <input class="form-control" type="text" placeholder="Productora" name="productora" [(ngModel)]="pelicula.productora" minlength="5" #productora="ngModel" required>
+            <select [(ngModel)]="pelicula.productora" class="form-control" name="productora" #productora="ngModel" required>
+
+                <option *ngFor="let p of productoras" [value]="p">{{p}}</option>
+            </select>
             <div *ngIf="productora?.errors?.required" class="form-control-feedback">
                 Este campo es requerido
-            </div>
-            <div *ngIf="productora?.errors?.minlength" class="form-control-feedback">
-                Por los menos {{titulo?.errors.minlength.requiredLength}} caracteres
             </div>
         </div>
     </div>
@@ -93,15 +93,17 @@
 
     <div class="form-group row">
         <label class="col-2 col-form-label">&nbsp;</label>
+
         <div class="input-group col-md-8">
-            <button type="submit" class="btn btn-outline-primary" [disabled]="!forma.valid"> <!---->
+
+            <button type=" submit " class="btn btn-outline-primary " [disabled]="!forma.valid "> <!---->
           Guardar
         </button>
         </div>
     </div>
 
-</form>
+    <div class="form-group row">
+        <label class="col-2 col-form-label"><a [routerLink]="['/home']" class="btn btn-outline-danger">Regresar</a> &nbsp;</label>
+    </div>
 
-<pre>
-    {{ pelicula | json}}
-</pre>
+</form>

@@ -17,9 +17,10 @@
         <div>
             <img *ngIf="serie.productora== 'Marvel'" class="img-logo" src="assets/img/productoras/logo-marvel.png" alt="Marvel">
             <img *ngIf="serie.productora== 'DC'" class="img-logo" src="assets/img/productoras/dc-logo.jpg" alt="DC">
+            <img *ngIf="serie.productora== 'Atresmedia'" class="img-logo" src="assets/img/productoras/atresmmedia.jpg" alt="DC">
         </div>
         <hr>
-        <div>
+        <div *ngIf="serie.actores?.length">
             <h5> Actores</h5>
             <div class="card-deck">
                 <app-actores-tarjeta [actor]="foo" [index]=i *ngFor="let foo of serie.actores; let i = index" style="width: 12rem"></app-actores-tarjeta>
@@ -27,7 +28,7 @@
 
         </div>
         <hr>
-        <div>
+        <div *ngIf="serie.cotenido?.length">
             <h5> Contenido</h5>
             <!--Accordion wrapper-->
             <div class="accordion md-accordion" id="accordionEx1" role="tablist" aria-multiselectable="true">

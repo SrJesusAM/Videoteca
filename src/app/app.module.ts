@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 // Rutas
 import { APP_ROUTES } from './app.routes';
@@ -34,7 +35,8 @@ import { AddPeliculaComponent } from './components/formularios/add-pelicula/add-
 import { AddSerieComponent } from './components/formularios/add-serie/add-serie.component';
 import { AddPageComponent } from './components/formularios/add-page.component';
 import { ModificarActorComponent } from './components/formularios/modificar-actor/modificar-actor.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AddActorComponent } from './components/formularios/add-actor/add-actor.component';
+
 
 
 
@@ -61,7 +63,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     AddPeliculaComponent,
     AddSerieComponent,
     AddPageComponent,
-    ModificarActorComponent
+    ModificarActorComponent,
+    AddActorComponent
   ],
   imports: [
     BrowserModule,

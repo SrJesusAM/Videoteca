@@ -27,7 +27,9 @@ export class AddPeliculaComponent {
     estreno: null,
     productora: null,
     idx: this._peliculasService.getPeliculas().length,
-  }
+  };
+
+  productoras = ["Atresmedia", "Marvel", "DC"];
 
   constructor(private _actoresService: ActoresService,
               private _peliculasService: PeliculasService) { }

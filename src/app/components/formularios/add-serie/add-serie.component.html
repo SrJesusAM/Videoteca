@@ -1,32 +1,41 @@
 <h4>Añadir <small>Serie</small></h4>
 <hr>
-<form>
+<form [formGroup]="forma" (ngSubmit)="guardarCambios()">
 
-    <div>
+    <div class="form-group row" [ngClass]="{'has-danger': !forma.controls['titulo'].valid}">
+        <label class="col-2 col-form-label">Titulo</label>
+        <div class="col-8">
 
-        <div class="form-group row">
-            <label class="col-2 col-form-label">Titulo</label>
-            <div class="col-8">
-
-                <input class="form-control" type="text" placeholder="Titulo">
+            <input class="form-control" type="text" placeholder="Titulo" formControlName="titulo">
+            <div class="form-control-feedback " *ngIf="forma.controls['titulo'].errors?.required">
+                Este campo es necesario
+            </div>
+            <div class="form-control-feedback " *ngIf="forma.controls['titulo'].errors?.minlength">
+                Por lo menos 3 caracteres
             </div>
         </div>
-
-        <div class="form-group row">
-            <label class="col-2 col-form-label">Sinopsis</label>
-            <div class="col-8">
-
-                <input class="form-control" type="text" placeholder="Sinopsis">
-            </div>
-        </div>
-
     </div>
+
+    <div class="form-group row">
+        <label class="col-2 col-form-label">Sinopsis</label>
+        <div class="col-8">
+
+            <input class="form-control" type="text" placeholder="Sinopsis" formControlName="sinopsis">
+            <div class="form-control-feedback " *ngIf="forma.controls['sinopsis'].errors?.required">
+                Este campo es necesario
+            </div>
+            <div class="form-control-feedback " *ngIf="forma.controls['sinopsis'].errors?.minlength">
+                Por lo menos 20 caracteres
+            </div>
+        </div>
+    </div>
+
 
     <div class="form-group row">
         <label class="col-2 col-form-label">Imagen</label>
         <div class="col-md-8">
 
-            <input type="file" id="archivo1">
+            <input class="form-control" type="text" placeholder="Imagen" formControlName="img">
         </div>
     </div>
 
@@ -34,37 +43,50 @@
         <label class="col-2 col-form-label">Fecha estreno</label>
         <div class="col-md-8">
 
-            <input id="date" type="date">
+            <input id="date" type="date" formControlName="estreno">
+            <div class="form-control-feedback " *ngIf="forma.controls['estreno'].errors?.required">
+                Este campo es necesario
+            </div>
         </div>
     </div>
 
     <div class="form-group row">
         <label class="col-2 col-form-label">Productora</label>
-        <div class="col-8">
+        <div class="col-4">
 
-            <input class="form-control" type="text" placeholder="Sinopsis">
+            <select class="form-control" name="productora" formControlName="productora">
+                    <option value="">Seleccione productora...</option>
+                    <option *ngFor="let p of productoras" [value]="p">{{p}}</option>
+                </select>
+            <div class="form-control-feedback " *ngIf="forma.controls['productora'].errors?.required">
+                Este campo es necesario
+            </div>
         </div>
     </div>
 
-    <div class="form-group row">
-        <label class="col-2 col-form-label">Contenido</label>
-        <div class="col-md-2">
-            <input type="text" class="form-control" placeholder="Temporada">
+    <!--
+    <div formGroupName="contenido">
+
+        <div class="form-group row">
+            <label class="col-2 col-form-label">Contenido</label>
+            <div class="col-md-2">
+                <input type="text" class="form-control" placeholder="Temporada" formControlName="temporada">
+            </div>
+            <button type="button" class="btn btn-primary"><i class="fa fa-plus"></i></button> &nbsp;
+
+            <div class="col-md-4" formArrayName="episodios">
+                <input type="text" class="form-control" placeholder="Episodio" [formControlName]="i" *ngFor="let episodio of forma.controls['contenido'].controls['episodios'].controls; let i = index">
+            </div>
+            <button (click)="agregarEpisodio()" type="button" class="btn btn-primary"><i class="fa fa-plus"></i></button> &nbsp;
+
         </div>
-        <button type="button" class="btn btn-primary"><i class="fa fa-plus"></i></button> &nbsp;
-        <button type="button" class="btn btn-danger"><i class="fa fa-minus"></i></button>
-        <div class="col-md-4">
-            <input type="text" class="form-control" placeholder="Episodio">
-        </div>
-        <button type="button" class="btn btn-primary"><i class="fa fa-plus"></i></button> &nbsp;
-        <button type="button" class="btn btn-danger"><i class="fa fa-minus"></i></button>
-    </div>
+    </div> -->
 
     <div class="form-group row">
         <label class="col-2 col-form-label">Identificador</label>
         <div class="col-4">
 
-            <input class="form-control" type="text" placeholder="Identificador" disabled>
+            <input class="form-control" type="text" placeholder="Identificador" formControlName="idx" [attr.disabled]="true">
         </div>
     </div>
 
@@ -78,5 +100,13 @@
     </div>
 
 
+
+    <div class="form-group row">
+        <label class="col-2 col-form-label"><a [routerLink]="['/home']" class="btn btn-outline-danger">Regresar</a> &nbsp;</label>
+    </div>
+
+    {{forma.valid}}
+
+    <br> {{forma.status}}
 
 </form>
