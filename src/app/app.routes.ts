@@ -27,6 +27,7 @@ const appRoutes: Routes = [
     { path: 'series/:id', component: SerieComponent },
     { path: 'actores', component: ActoresComponent },
     { path: 'actores/:id', component: ActorComponent },
+    { path: 'modificar-actor/:id', component: ModificarActorComponent },
     { path: 'buscar/:termino', component: BuscadorComponent },
     {
          path: 'add', 

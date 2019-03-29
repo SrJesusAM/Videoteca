@@ -40,8 +40,8 @@ export class AddPeliculaComponent {
   }
 
   guardar(forma: NgForm) {
-    console.log("ngForm ", forma);
-    console.log("Pelicula: ", this.pelicula);
+    // console.log("ngForm ", forma);
+    // console.log("Pelicula: ", this.pelicula);
     this.peliculas.push(this.pelicula);
   }
 }

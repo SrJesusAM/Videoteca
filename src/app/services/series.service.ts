@@ -22,7 +22,7 @@ export class SeriesService {
             "Charlie Thomas Cox es un actor británico famoso por interpretar a Matt Murdock en la serie producida por Netflix Marvel's Daredevil y Marvel's The Defenders",
           img: "assets/img/actores/charlie-cox.jpg",
           nombreCompleto: "Charlie Thomas Cox",
-          nacimiento: "15/12/1982",
+          nacimiento: new Date(1982, 12, 15),
           nacionalidad: "Britanico",
         }
       ],
@@ -57,7 +57,7 @@ export class SeriesService {
               "Melissa Marie Benoist, conocida como Melissa Benoist, es una actriz y cantante estadounidense. Saltó a la fama en 2012 por su papel de Marley Rose en la serie de comedia musical Glee de FOX. Previamente a su popularidad, Melissa ha aparecido en varias series de televisión como Homeland, The Good Wife y Law & Order",
             img: "assets/img/actores/melissa-benoist.jpg",
             nombreCompleto: "Melissa Marie Benoist",
-            nacimiento: "04/10/1988",
+            nacimiento:  new Date(1988, 10, 4),
             nacionalidad: "Estadounidense",
         },
         {
@@ -67,7 +67,7 @@ export class SeriesService {
             "Stephen Adam Amell (Toronto, Canadá, 8 de mayo de 1981), es un actor y actor de voz canadiense, mayormente reconocido por interpretar a Oliver Queen / Green Arrow en la serie de televisión Arrow, y en las series derivadas de la misma, The Flash, Legends of Tomorrow y Vixen, así como por dar vida al personaje de Casey Jones en la película Teenage Mutant Ninja Turtles.",
           img: "assets/img/actores/stephen-amell.png",
           nombreCompleto: "Stephen Adam Amell",
-          nacimiento: "08/05/1981",
+          nacimiento: new Date(1981, 5 , 8),
           nacionalidad: "Canadiense",
         },
       ],
@@ -102,7 +102,7 @@ export class SeriesService {
             "Stephen Adam Amell (Toronto, Canadá, 8 de mayo de 1981), es un actor y actor de voz canadiense, mayormente reconocido por interpretar a Oliver Queen / Green Arrow en la serie de televisión Arrow, y en las series derivadas de la misma, The Flash, Legends of Tomorrow y Vixen, así como por dar vida al personaje de Casey Jones en la película Teenage Mutant Ninja Turtles.",
           img: "assets/img/actores/stephen-amell.png",
           nombreCompleto: "Stephen Adam Amell",
-          nacimiento: "08/05/1981",
+          nacimiento: new Date(1981, 5 , 8),
           nacionalidad: "Canadiense",
         },
         {
@@ -112,7 +112,7 @@ export class SeriesService {
               "Melissa Marie Benoist, conocida como Melissa Benoist, es una actriz y cantante estadounidense. Saltó a la fama en 2012 por su papel de Marley Rose en la serie de comedia musical Glee de FOX. Previamente a su popularidad, Melissa ha aparecido en varias series de televisión como Homeland, The Good Wife y Law & Order",
             img: "assets/img/actores/melissa-benoist.jpg",
             nombreCompleto: "Melissa Marie Benoist",
-            nacimiento: "04/10/1988",
+            nacimiento:  new Date(1988, 10, 4),
             nacionalidad: "Estadounidense",
         }
       ],
@@ -149,7 +149,7 @@ export class SeriesService {
             "Robert Clark Gregg es un actor, guionista y director estadounidense. Es conocido sobre todo por su papel como Phil Coulson en las películas Iron Man, Iron Man 2, Thor y The Avengers y en la serie de televisión Agents of S.H.I.E.L.D., que se transmite por la cadena ABC",
           img: "assets/img/actores/clark-gregg.jpg",
           nombreCompleto: "Brianne Sidonie Desaulniers",
-          nacimiento: "02/04/1962",
+          nacimiento: new Date(1962, 4, 2),
           nacionalidad: "Estadounidense",
         }
       ],
@@ -185,7 +185,7 @@ export class SeriesService {
             "Stephen Adam Amell (Toronto, Canadá, 8 de mayo de 1981), es un actor y actor de voz canadiense, mayormente reconocido por interpretar a Oliver Queen / Green Arrow en la serie de televisión Arrow, y en las series derivadas de la misma, The Flash, Legends of Tomorrow y Vixen, así como por dar vida al personaje de Casey Jones en la película Teenage Mutant Ninja Turtles.",
           img: "assets/img/actores/stephen-amell.png",
           nombreCompleto: "Stephen Adam Amell",
-          nacimiento: "08/05/1981",
+          nacimiento: new Date(1981, 5 , 8),
           nacionalidad: "Canadiense",
         },
         {
@@ -195,7 +195,7 @@ export class SeriesService {
               "Melissa Marie Benoist, conocida como Melissa Benoist, es una actriz y cantante estadounidense. Saltó a la fama en 2012 por su papel de Marley Rose en la serie de comedia musical Glee de FOX. Previamente a su popularidad, Melissa ha aparecido en varias series de televisión como Homeland, The Good Wife y Law & Order",
             img: "assets/img/actores/melissa-benoist.jpg",
             nombreCompleto: "Melissa Marie Benoist",
-            nacimiento: "04/10/1988",
+            nacimiento:  new Date(1988, 10, 4),
             nacionalidad: "Estadounidense",
         }
       ],
@@ -231,7 +231,7 @@ export class SeriesService {
             "Stephen Adam Amell (Toronto, Canadá, 8 de mayo de 1981), es un actor y actor de voz canadiense, mayormente reconocido por interpretar a Oliver Queen / Green Arrow en la serie de televisión Arrow, y en las series derivadas de la misma, The Flash, Legends of Tomorrow y Vixen, así como por dar vida al personaje de Casey Jones en la película Teenage Mutant Ninja Turtles.",
           img: "assets/img/actores/stephen-amell.png",
           nombreCompleto: "Stephen Adam Amell",
-          nacimiento: "08/05/1981",
+          nacimiento: new Date(1981, 5 , 8),
           nacionalidad: "Canadiense",
         },
         {
@@ -241,7 +241,7 @@ export class SeriesService {
               "Melissa Marie Benoist, conocida como Melissa Benoist, es una actriz y cantante estadounidense. Saltó a la fama en 2012 por su papel de Marley Rose en la serie de comedia musical Glee de FOX. Previamente a su popularidad, Melissa ha aparecido en varias series de televisión como Homeland, The Good Wife y Law & Order",
             img: "assets/img/actores/melissa-benoist.jpg",
             nombreCompleto: "Melissa Marie Benoist",
-            nacimiento: "04/10/1988",
+            nacimiento:  new Date(1988, 10, 4),
             nacionalidad: "Estadounidense",
         }
       ],
@@ -272,6 +272,17 @@ export class SeriesService {
   
   getSerie(idx: string) {
     return this.series[idx];
+  }
+
+  eliminarSerie(idx: number) {
+    for(let i = idx; i < this.series.length; i++ ){
+      this.series[i].idx -= 1; 
+      this.series[i] = this.series[i + 1];
+      
+    }
+    this.series.length = this.series.length - 1;
+
+    
   }
   
   buscarSeries(termino: string):Serie[] {

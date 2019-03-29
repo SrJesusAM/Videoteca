@@ -1,92 +1,108 @@
 <h4>Modificar <small>Actor</small></h4>
 <hr>
-<form>
-
-    <div>
+<form [formGroup]="forma" (ngSubmit)="guardar()">
 
 
-        <div class="form-group row">
-            <label class="col-2 col-form-label">Nombre</label>
-            <div class="col-8">
+    <div class="form-group row" [ngClass]="{'has-danger': !forma.controls['nombre'].valid}">
+        <label class="col-2 col-form-label">Nombre</label>
+        <div class="col-8">
 
-                <input class="form-control" type="text" placeholder="Nombre">
+            <input class="form-control" type="text" placeholder="Nombre" formControlName="nombre">
+            <div *ngIf="forma.controls['nombre'].errors?.required" class="form-control-feedback">
+                Este campo es requerido
             </div>
-        </div>
-
-        <div class="form-group row">
-            <label class="col-2 col-form-label">Biografía</label>
-            <div class="col-8">
-
-                <input class="form-control" type="text" placeholder="Biografía">
+            <div *ngIf="forma.controls['nombre'].errors?.minlength" class="form-control-feedback">
+                Por los menos 3 caracteres
             </div>
         </div>
 
     </div>
+
+
+    <div class="form-group row" [ngClass]="{'has-danger': !forma.controls['biografia'].valid}">
+        <label class="col-2 col-form-label">Biografía</label>
+        <div class="col-8">
+
+            <input class="form-control" type="text" placeholder="Biografía" formControlName="biografia">
+            <div *ngIf="forma.controls['biografia'].errors?.required" class="form-control-feedback">
+                Este campo es requerido
+            </div>
+            <div *ngIf="forma.controls['biografia'].errors?.minlength" class="form-control-feedback">
+                Por los menos 20 caracteres
+            </div>
+        </div>
+
+    </div>
+
 
     <div class="form-group row">
         <label class="col-2 col-form-label">Imagen</label>
-
         <div class="col-md-8">
-            <img src="../../../../assets/img/actores/jason-momoa.jpg" style="height: 11rem"> <br><br>
-            <input type="file" id="archivo1">
+            <img [src]="actorInfo.img" style="height: 14rem">
+            <br><br>
+            <input class="form-control" type="text" placeholder="Imagen" formControlName="img">
         </div>
     </div>
 
-    <div class="form-group row">
-        <label class="col-2 col-form-label">Fecha estreno</label>
-        <div class="col-md-8">
-
-            <input id="date" type="date">
-        </div>
-    </div>
-
-    <div class="form-group row">
+    <div class="form-group row" [ngClass]="{'has-danger': !forma.controls['nombreCompleto'].valid}">
         <label class="col-2 col-form-label">Nombre completo</label>
         <div class="col-8">
 
-            <input class="form-control" type="text" placeholder="Nombre completo">
+            <input class="form-control" type="text" placeholder="Nombre completo" formControlName="nombreCompleto">
+            <div *ngIf="forma.controls['nombreCompleto'].errors?.required" class="form-control-feedback">
+                Este campo es requerido
+            </div>
+            <div *ngIf="forma.controls['nombreCompleto'].errors?.minlength" class="form-control-feedback">
+                Por los menos 3 caracteres
+            </div>
+        </div>
+
+    </div>
+
+    <div class="form-group row">
+        <label class="col-2 col-form-label">Fecha nacimiento</label>
+        <div class="col-md-8">
+
+            <input id="date" type="date" formControlName="nacimiento">
+            <div class="form-control-feedback " *ngIf="forma.controls['nacimiento'].errors?.required">
+                Este campo es necesario
+            </div>
         </div>
     </div>
 
     <div class="form-group row">
         <label class="col-2 col-form-label">Nacionalidad</label>
-        <div class="col-8">
+        <div class="col-4">
 
-            <input class="form-control" type="text" placeholder="Nacionalidad">
+            <select class="form-control" name="nacionalidad" formControlName="nacionalidad">
+                    <option value="">Seleccione nacionalidad...</option>
+                    <option *ngFor="let n of nacionalidades" [value]="n">{{n}}</option>
+                </select>
+            <div class="form-control-feedback " *ngIf="forma.controls['nacionalidad'].errors?.required">
+                Este campo es necesario
+            </div>
         </div>
     </div>
 
-    <div class="form-group row">
-        <label class="col-2 col-form-label">Peliculas</label>
+    <!--   <div class="form-group row">
+        <label class="col-2 col-form-label">Actores</label>
         <div class="col-4">
 
-            <select id="inputState" class="form-control">
-                <option>Seleccione pelicula...</option>
-                <option>...</option>
+            <select [(ngModel)]="actor.actores" class="form-control" name="actores">
+                <option value="">Seleccione actor...</option>
+                <option *ngFor="let actor of actores" [value]="actor | slice:0:4">{{actor.nombre}}</option>
             </select>
         </div>
         <button type="button" class="btn btn-primary"><i class="fa fa-plus"></i></button> &nbsp;
         <button type="button" class="btn btn-danger"><i class="fa fa-minus"></i></button>
     </div>
-
-    <div class="form-group row">
-        <label class="col-2 col-form-label">Series</label>
-        <div class="col-4">
-
-            <select id="inputState" class="form-control">
-                <option>Seleccione serie...</option>
-                <option>...</option>
-            </select>
-        </div>
-        <button type="button" class="btn btn-primary"><i class="fa fa-plus"></i></button> &nbsp;
-        <button type="button" class="btn btn-danger"><i class="fa fa-minus"></i></button>
-    </div>
+-->
 
     <div class="form-group row">
         <label class="col-2 col-form-label">Identificador</label>
         <div class="col-4">
 
-            <input class="form-control" type="text" placeholder="Identificador" disabled>
+            <input class="form-control" type="text" placeholder="Identificador" formControlName="idx" [attr.disabled]="true">
         </div>
     </div>
 
@@ -97,6 +113,10 @@
           Guardar
         </button>
         </div>
+    </div>
+
+    <div class="form-group row">
+        <label class="col-2 col-form-label"><a [routerLink]="['/home']" class="btn btn-outline-danger">Regresar</a> &nbsp;</label>
     </div>
 
 </form>

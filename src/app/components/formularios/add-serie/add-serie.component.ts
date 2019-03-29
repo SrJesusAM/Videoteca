@@ -56,7 +56,7 @@ export class AddSerieComponent implements OnInit {
   */ 
 
   guardarCambios(){
-    console.log(this.forma.value);
+    // console.log(this.forma.value);
     this.series.push(this.forma.value);
     
   }

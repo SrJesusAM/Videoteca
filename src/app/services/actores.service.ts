@@ -14,7 +14,7 @@ export class ActoresService {
         "Cuando Arthur Curry (Jason Momoa) descubre que es mitad humano y mitad atlante, emprenderá el viaje de su vida en esta aventura que no sólo le obligará a enfrentarse a quién es en realidad, sino también a descubrir si es digno de cumplir con su destino: ser rey, y convertirse en Aquaman.",
       img: "assets/img/actores/jason-momoa.jpg",
       nombreCompleto: "Joseph Jason Namakaeha Momoa",
-      nacimiento: "01/08/1979",
+      nacimiento: new Date(1979, 8, 1),
       nacionalidad: "Estadounidense",
       peliculas: [
         {
@@ -35,7 +35,7 @@ export class ActoresService {
         "Gal Gadot es una actriz y modelo israelí. Nació en Rosh Ha'ayin, Israel, en el seno de una familia judía asquenazí (de Polonia, Austria, Alemania y Checoslovaquia). Trabajó en las FDI durante dos años y ganó el título de Miss Israel en 2004. Gal comenzó a modelar a finales de los años 2000, y debutó en la cuarta película de la franquicia Fast and Furious, Fast & Furious (2009), como Gisele, una asociada del villano principal de la película. Su papel se amplió en las secuelas Fast Five (2011) y Fast & Furious 6 (2013), en las que su personaje estaba ligado románticamente a Han Seoul-Oh (Sung Kang). En las películas, Gal realizó sus propias acrobacias. También apareció en las películas 2010 Date Night (2010) y Knight and Day (2010). A principios de diciembre de 2013, Gal fue elegida Mujer Maravilla en el Universo Extendido de DC. Gal es un entusiasta de las motos, y posee una Ducati Monster-S2R 2006 negra. Está casada con Yaron Versano desde el 28 de septiembre de 2008. Tienen un hijo.",
       img: "assets/img/actores/gal-gadot.jpg",
       nombreCompleto: "Gal Gadot",
-      nacimiento: "30/04/1985",
+      nacimiento: new Date(1985, 4, 30),
       nacionalidad: "Israelí",
       peliculas: [
         {
@@ -56,7 +56,7 @@ export class ActoresService {
         "Christopher Robert 'Chris' Evans (nacido el 13 de junio de 1981) es un actor y cineasta estadounidense. Evans es más conocido por sus papeles de superhéroe, como Capitán América en el Marvel Cinematic Universe, y como Human Torch en Fantastic Four. En 2015, debutó como director con el drama romántico Before We Go.",
       img: "assets/img/actores/chris-evans.jpg",
       nombreCompleto: "Christopher Robert Evans",
-      nacimiento: "13/06/1981",
+      nacimiento: new Date(1981, 6, 13),
       nacionalidad: "Estadounidense",
       peliculas: [
         {
@@ -86,8 +86,8 @@ export class ActoresService {
         "Charlie Thomas Cox es un actor británico famoso por interpretar a Matt Murdock en la serie producida por Netflix Marvel's Daredevil y Marvel's The Defenders",
       img: "assets/img/actores/charlie-cox.jpg",
       nombreCompleto: "Charlie Thomas Cox",
-      nacimiento: "15/12/1982",
-      nacionalidad: "Britanico",
+      nacimiento: new Date(1982, 12, 15),
+      nacionalidad: "Britanica",
       series: [
         {
           idx: 0,
@@ -107,7 +107,7 @@ export class ActoresService {
         "Melissa Marie Benoist, conocida como Melissa Benoist, es una actriz y cantante estadounidense. Saltó a la fama en 2012 por su papel de Marley Rose en la serie de comedia musical Glee de FOX. Previamente a su popularidad, Melissa ha aparecido en varias series de televisión como Homeland, The Good Wife y Law & Order",
       img: "assets/img/actores/melissa-benoist.jpg",
       nombreCompleto: "Melissa Marie Benoist",
-      nacimiento: "04/10/1988",
+      nacimiento: new Date(1988, 10, 4),
       nacionalidad: "Estadounidense",
       series: [
         {
@@ -155,7 +155,7 @@ export class ActoresService {
         "Stephen Adam Amell (Toronto, Canadá, 8 de mayo de 1981), es un actor y actor de voz canadiense, mayormente reconocido por interpretar a Oliver Queen / Green Arrow en la serie de televisión Arrow, y en las series derivadas de la misma, The Flash, Legends of Tomorrow y Vixen, así como por dar vida al personaje de Casey Jones en la película Teenage Mutant Ninja Turtles.",
       img: "assets/img/actores/stephen-amell.png",
       nombreCompleto: "Stephen Adam Amell",
-      nacimiento: "08/05/1981",
+      nacimiento: new Date(1981, 5 , 8),
       nacionalidad: "Canadiense",
       series: [
         {
@@ -203,8 +203,8 @@ export class ActoresService {
         "Daniel Rovira de Rivas es un actor, humorista y monologuista español, ganador del Premio Goya al mejor actor revelación 2015 por la película Ocho apellidos vascos, dirigida por Emilio Martínez-Lázaro.",
       img: "assets/img/actores/dani-rovira.jpg",
       nombreCompleto: "Daniel Rovira de Rivas ",
-      nacimiento: "01/11/1980",
-      nacionalidad: "Español",
+      nacimiento: new Date(1980, 11 , 1),
+      nacionalidad: "Española",
       peliculas: [
         {
           idx: 4,
@@ -224,7 +224,7 @@ export class ActoresService {
       "Brianne Sidonie Desaulniers, conocida como Brie Larson, es una actriz, directora, guionista y cantante estadounidense, ganadora, entre otros, del premio Óscar y del Globo de Oro a la mejor actriz de 2015. Larson fue educada en su casa antes de estudiar interpretación en el American Conservatory Theater",
     img: "assets/img/actores/brie-larson.jpg",
     nombreCompleto: "Brianne Sidonie Desaulniers",
-    nacimiento: "01/10/1989",
+    nacimiento: new Date(1989, 10 , 1),
     nacionalidad: "Estadounidense",
     peliculas: [
       {
@@ -245,7 +245,7 @@ export class ActoresService {
         "Robert Clark Gregg es un actor, guionista y director estadounidense. Es conocido sobre todo por su papel como Phil Coulson en las películas Iron Man, Iron Man 2, Thor y The Avengers y en la serie de televisión Agents of S.H.I.E.L.D., que se transmite por la cadena ABC",
       img: "assets/img/actores/clark-gregg.jpg",
       nombreCompleto: "Brianne Sidonie Desaulniers",
-      nacimiento: "02/04/1962",
+      nacimiento: new Date(1962, 4, 2),
       nacionalidad: "Estadounidense",
       series: [
         {
@@ -272,6 +272,21 @@ export class ActoresService {
     return this.actores[idx];
   }
 
+  guardarActor(idx: number, actor: Actor) {
+    this.actores[idx] = actor;
+  }
+
+  eliminarActor(idx: number) {
+    for(let i = idx; i < this.actores.length; i++ ){
+      this.actores[i].idx -= 1; 
+      this.actores[i] = this.actores[i + 1];
+      
+    }
+    this.actores.length = this.actores.length - 1;
+
+    
+  }
+
   buscarActores(termino: string):Actor[] {
     let actoressArr: Actor[] = [];
     termino = termino.toLowerCase();
@@ -296,7 +311,7 @@ export interface Actor {
   biografia: string;
   img: string;
   nombreCompleto: string;
-  nacimiento: string;
+  nacimiento: Date;
   nacionalidad: string;
   peliculas?: Pelicula[];
   series?: Serie[];

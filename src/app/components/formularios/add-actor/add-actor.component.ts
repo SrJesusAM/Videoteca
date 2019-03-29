@@ -37,8 +37,8 @@ export class AddActorComponent implements OnInit {
   }
 
   guardar(forma: NgForm) {
-    console.log("ngForm ", forma);
-    console.log("Pelicula: ", this.actor);
+    // console.log("ngForm ", forma);
+    // console.log("Pelicula: ", this.actor);
     this.actores.push(this.actor);
   }
 

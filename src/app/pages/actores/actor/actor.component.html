@@ -1,5 +1,7 @@
 <!-- <h1 class="animated fadeIn"> Jason Momoa </h1>
 <hr> -->
+<h3 class="animated fadeIn">{{actor.nombre}} <small> ({{actor.nacimiento | date: 'y'}})</small></h3>
+<hr>
 
 <div class="row animated fadeIn fast">
     <div class="col-md-3">
@@ -14,7 +16,7 @@
                 </tr>
                 <tr>
                     <th scope="row">Nacimiento</th>
-                    <td>{{actor.nacimiento}}</td>
+                    <td>{{actor.nacimiento | date: 'd/M/yyyy'}}</td>
                 </tr>
                 <tr>
                     <th scope="row">Nacionalidad</th>
@@ -27,27 +29,25 @@
     </div>
 
     <div class="col-md-8">
-        <h3> {{actor.nombre}} </h3>
 
-        <hr>
         <h5>Biografía</h5>
         <p>
             {{actor.biografia}}
         </p>
         <hr>
         <br>
-        <div *ngIf="actor.peliculas?.length || actor.peliculas?.length">
+        <div *ngIf="actor.peliculas?.length || actor.series?.length">
             <h5> Filmografía</h5>
             <div class="card-deck">
                 <app-peliculas-tarjeta [pelicula]="foo" [index]=i *ngFor="let foo of actor.peliculas; let i = index" style="width: 15rem"></app-peliculas-tarjeta>
-                <app-series-tarjeta [serie]="foo" [index]=i *ngFor="let foo of actor.series; let i = index" style="width: 15rem"></app-series-tarjeta>
+                <app-series-tarjeta [serie]="foo" [index]=in *ngFor="let foo of actor.series; let in = index" style="width: 15rem"></app-series-tarjeta>
                 <!--<app-series-tarjeta (serieSeleccionada)="verSerie($event)" [serie]="foo" [index]=i *ngFor="let foo of series; let i = index" style="width: 15rem"></app-series-tarjeta>-->
 
             </div>
         </div>
-
     </div>
     <div class="col-md-1">
-        <a [routerLink]="['/modificar-actor']" class="btn btn-outline-dark btn-block"> Editar</a>
-        <a [routerLink]="['/modificar-actor']" class="btn btn-outline-danger btn-block"> Borrar</a>
+        <a (click)="modificaActor()" class="btn btn-outline-dark btn-block"> Editar</a>
+        <a (click)="eliminaActor()" class="btn btn-outline-danger btn-block"> Borrar</a>
     </div>
+</div>

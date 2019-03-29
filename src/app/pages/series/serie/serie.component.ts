@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { SeriesService } from 'src/app/services/series.service';
 
 @Component({
@@ -12,7 +12,8 @@ export class SerieComponent implements OnInit {
   serie:any = {};
 
   constructor(private activatedRoute: ActivatedRoute,
-              private _seriesService: SeriesService, ) {
+              private _seriesService: SeriesService,
+              private router: Router ) {
 
      this.activatedRoute.params.subscribe( params => {
        this.serie = this._seriesService.getSerie(params ['id']);
@@ -21,8 +22,11 @@ export class SerieComponent implements OnInit {
     } 
   
  ngOnInit(){
-   console.log(this.serie);
  }
+eliminarSerie(){
+  this._seriesService.eliminarSerie(this.serie.idx);
+  this.router.navigate( ['series']);
+}
 
 }
 

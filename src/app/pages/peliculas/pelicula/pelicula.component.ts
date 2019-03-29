@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { PeliculasService } from 'src/app/services/peliculas.service';
 
 
@@ -13,7 +13,8 @@ export class PeliculaComponent implements OnInit{
   pelicula:any = {};
 
   constructor( private activatedRoute: ActivatedRoute,
-               private _peliculasService: PeliculasService ) {
+               private _peliculasService: PeliculasService,
+               private router: Router ) {
 
                 this.activatedRoute.params.subscribe( params => {
                   this.pelicula = this._peliculasService.getPelicula(params ['id']);
@@ -25,8 +26,11 @@ export class PeliculaComponent implements OnInit{
               }
 
   ngOnInit () {
-    console.log(this.pelicula);
   }
 
+  eliminaPelicula(){
+    this._peliculasService.eliminarPelicula(this.pelicula.idx);
+    this.router.navigate( ['peliculas']);
+}
 
 }

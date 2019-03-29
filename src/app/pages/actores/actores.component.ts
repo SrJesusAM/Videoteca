@@ -12,7 +12,9 @@ export class ActoresComponent implements OnInit {
   actores: Actor[] = [];
 
   constructor(private _actoresService: ActoresService,
-              private router: Router) { }
+              private router: Router) {
+                
+              }
 
   ngOnInit() {
     this.actores = this._actoresService.getActores();
