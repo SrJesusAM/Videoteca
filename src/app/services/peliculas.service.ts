@@ -155,11 +155,9 @@ export class PeliculasService {
       
     }
     this.peliculas.length = this.peliculas.length - 1;
-
-    
   }
 
-  buscarPeliculas(termino: string):Pelicula[] {
+   buscarPeliculas(termino: string):Pelicula[] {
     let peliculasArr: Pelicula[] = [];
     termino = termino.toLowerCase();
     for (let i = 0; i< this.peliculas.length; i++) {

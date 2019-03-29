@@ -26,6 +26,7 @@ export class PeliculaComponent implements OnInit{
               }
 
   ngOnInit () {
+    console.log(this.pelicula);
   }
 
   eliminaPelicula(){

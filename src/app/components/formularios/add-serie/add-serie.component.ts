@@ -32,6 +32,7 @@ export class AddSerieComponent implements OnInit {
       'img': new FormControl('assets/img/series/imagen-prueba.jpg', []),
       'estreno': new FormControl(new Date(), [Validators.required]),
       'productora': new FormControl('', [Validators.required]),
+      'actores': new FormControl('', ),
       'idx': new FormControl(this._seriesService.getSeries().length, []),
        /* 'contenido': new FormGroup({
         'temporada': new FormControl(1, Validators.required),

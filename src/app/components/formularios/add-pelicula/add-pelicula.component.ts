@@ -26,6 +26,7 @@ export class AddPeliculaComponent {
     img: "assets/img/peliculas/imagen-prueba.jpg",
     estreno: null,
     productora: null,
+    actores: null,
     idx: this._peliculasService.getPeliculas().length,
   };
 
@@ -40,8 +41,9 @@ export class AddPeliculaComponent {
   }
 
   guardar(forma: NgForm) {
-    // console.log("ngForm ", forma);
-    // console.log("Pelicula: ", this.pelicula);
+    console.log("ngForm ", forma);
+    console.log("Pelicula: ", this.pelicula);
     this.peliculas.push(this.pelicula);
   }
+
 }
